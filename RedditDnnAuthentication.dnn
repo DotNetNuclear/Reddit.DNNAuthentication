@@ -1,0 +1,54 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Reddit.DNNAuthentication" type="Auth_System" version="01.00.00">
+      <friendlyname>Reddit DNN Authentication Provider</friendlyname>
+      <description>
+        The Reddit Authentication Provider is an authentication extension for DNN that allows users to login to this DNN portal with their reddit account.
+      </description>
+      <iconFile>~/DesktopModules/AuthenticationServices/Reddit.DNNAuthentication/images/icon_extension.png</iconFile>
+      <owner>
+        <name>DotNetNuclear</name>
+        <organization>DotNetNuclear LLC</organization>
+        <url>http://www.dotnetnuclear.com</url>
+        <email>support@dotnetnuclear.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <dependencies>
+        <dependency type="CoreVersion">09.01.00</dependency>
+        <dependency type="package">Reddit.DNNConnector</dependency>
+      </dependencies>
+
+      <components>
+
+        <component type="AuthenticationSystem">
+          <authenticationService>
+            <type>Reddit</type>
+            <settingsControlSrc>DesktopModules/AuthenticationServices/Reddit.DNNAuthentication/Settings.ascx</settingsControlSrc>
+            <loginControlSrc>DesktopModules/AuthenticationServices/Reddit.DNNAuthentication/Login.ascx</loginControlSrc>
+            <logoffControlSrc>DesktopModules/AuthenticationServices/Reddit.DNNAuthentication/Logoff.ascx</logoffControlSrc>
+          </authenticationService>
+        </component>
+
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>DotNetNuclear.Authentication.Reddit.dll</name>
+              <version>01.00.00</version>
+            </assembly>
+          </assemblies>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/AuthenticationServices/Reddit.DNNAuthentication</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

@@ -1,0 +1,18 @@
+﻿.reddit-loginpanel{
+    max-width: 550px;
+}
+
+.reddit-loginpanel .head {
+    position: relative;
+    background: url(../images/reddit_topper.png) top center no-repeat;
+    height: 188px;
+    margin-bottom: -98px;
+}
+
+.reddit-loginpanel .loginpanel {
+    background: #cee3f8;
+    border: 2px solid #5f99cf;
+    border-radius: 8px;
+    padding: 25px 2em 0 2em;
+    z-index: 10;
+}
