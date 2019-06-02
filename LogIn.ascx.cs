@@ -7,6 +7,7 @@ using DotNetNuke.Security.Membership;
 using System.Collections.Generic;
 using DotNetNuke.Security.Roles;
 using DotNetNuke.Common;
+using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuclear.DNN.Authentication.Reddit.Components;
 
 namespace DotNetNuclear.DNN.Authentication.Reddit
@@ -46,6 +47,11 @@ namespace DotNetNuclear.DNN.Authentication.Reddit
 
             loginButton.Click += LoginButton_Click;
             OAuthClient = new RedditOauthClient(PortalId, Mode);
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            ClientResourceManager.RegisterStyleSheet(this.Page, base.ControlPath + "resources/css/login.css");
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
